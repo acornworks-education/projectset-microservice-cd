@@ -32,7 +32,6 @@ public class PriceController {
 
     @GetMapping(value = "/spot/{symbol}", produces = "application/json")
     public SpotData getSpotPrice(@PathVariable("symbol") String symbol) {
-        // FIXME Refactor feature toggle
         if (featureToggle.getFeature(toggleKey)) {
             throw new NotImplementedException("New price function is not implemented");
         } else {
@@ -42,7 +41,6 @@ public class PriceController {
 
     @GetMapping(value = "/historical/{symbol}", produces = "application/json")
     public List<StockPrice> getHistoricalPrices(@PathVariable("symbol") String symbol) throws IOException, CsvException, ParseException {
-        // FIXME Refactor feature toggle
         if (featureToggle.getFeature(toggleKey)) {
             throw new NotImplementedException("New price function is not implemented");
         } else {
