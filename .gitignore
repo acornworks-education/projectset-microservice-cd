@@ -36,3 +36,5 @@ terraform_backend/terraform.tfstate
 terraform_backend/terraform.tfstate.backup
 terraform_backend/modules/.terraform
 terraform_backend/modules/.terraform.lock.hcl
+
+iam/*.json

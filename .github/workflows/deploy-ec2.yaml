@@ -60,7 +60,7 @@ jobs:
             --output text)
           echo "LOCK_ID=$output" >> "$GITHUB_OUTPUT"
     - name: Release Lock if Exists
-      if: ${{ steps.scan-locks.outputs.LOCK_ID != 'None' }}
+      if: ${{ steps.scan-locks.outputs.LOCK_ID != '' }}
       working-directory: ./terraform
       run: |
         terraform force-unlock -force ${{ steps.scan-locks.outputs.LOCK_ID }}    
