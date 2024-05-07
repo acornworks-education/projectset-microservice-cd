@@ -35,6 +35,7 @@ local bucket_suffix = std.extVar('bucket_suffix');
                 "ec2:DescribeTags",
                 "ec2:DescribeVolumes",
                 "ec2:DetachVolume",
+                "ec2:DescribeVpcAttribute",
                 "ec2:DescribeVpcs",
                 "ec2:GetPasswordData",
                 "ec2:ModifyImageAttribute",
