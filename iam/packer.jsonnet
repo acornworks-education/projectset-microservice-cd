@@ -24,6 +24,7 @@ local bucket_suffix = std.extVar('bucket_suffix');
                 "ec2:DeleteVolume",
                 "ec2:DeregisterImage",
                 "ec2:DescribeKeyPairs",
+                "ec2:DescribeAddresses",
                 "ec2:DescribeImageAttribute",
                 "ec2:DescribeImages",
                 "ec2:DescribeInstances",
@@ -34,6 +35,7 @@ local bucket_suffix = std.extVar('bucket_suffix');
                 "ec2:DescribeTags",
                 "ec2:DescribeVolumes",
                 "ec2:DetachVolume",
+                "ec2:DescribeVpcs",
                 "ec2:GetPasswordData",
                 "ec2:ModifyImageAttribute",
                 "ec2:RegisterImage",
@@ -41,7 +43,9 @@ local bucket_suffix = std.extVar('bucket_suffix');
                 "ec2:StopInstances",
                 "ec2:TerminateInstances",
                 "ecs:CreateCluster",
-                
+                "ecs:DescribeClusters",
+
+
             ],
             "Resource": "*",
             "Condition": {
@@ -56,7 +60,7 @@ local bucket_suffix = std.extVar('bucket_suffix');
                 "iam:CreateRole"
             ],
             "Resource": "*"
-        }
+        },
         {
             "Effect": "Allow",
             "Action": "s3:ListBucket",
