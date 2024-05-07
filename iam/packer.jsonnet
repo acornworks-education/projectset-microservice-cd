@@ -7,6 +7,7 @@ local bucket_suffix = std.extVar('bucket_suffix');
         {
             "Effect": "Allow",
             "Action": [
+                "ec2:AllocateAddress",
                 "ec2:AttachVolume",
                 "ec2:AuthorizeSecurityGroupIngress",
                 "ec2:CopyImage",
@@ -14,6 +15,7 @@ local bucket_suffix = std.extVar('bucket_suffix');
                 "ec2:CreateKeypair",
                 "ec2:CreateSecurityGroup",
                 "ec2:CreateSnapshot",
+                "ec2:CreateVpc",
                 "ec2:CreateTags",
                 "ec2:CreateVolume",
                 "ec2:DeleteKeypair",
@@ -37,7 +39,9 @@ local bucket_suffix = std.extVar('bucket_suffix');
                 "ec2:RegisterImage",
                 "ec2:RunInstances",
                 "ec2:StopInstances",
-                "ec2:TerminateInstances"
+                "ec2:TerminateInstances",
+                "ecs:CreateCluster",
+                
             ],
             "Resource": "*",
             "Condition": {
@@ -46,6 +50,13 @@ local bucket_suffix = std.extVar('bucket_suffix');
                 }
             }
         },
+        {
+            "Effect": "Allow",
+            "Action": [
+                "iam:CreateRole"
+            ],
+            "Resource": "*"
+        }
         {
             "Effect": "Allow",
             "Action": "s3:ListBucket",
@@ -68,7 +79,8 @@ local bucket_suffix = std.extVar('bucket_suffix');
                 "dynamodb:DescribeTable",
                 "dynamodb:GetItem",
                 "dynamodb:PutItem",
-                "dynamodb:DeleteItem"
+                "dynamodb:DeleteItem",
+                "dynamodb:Scan"
             ],
             "Resource": "arn:aws:dynamodb:*:*:table/terraform_state_lock"
         }        
