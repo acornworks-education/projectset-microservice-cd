@@ -63,4 +63,4 @@ jobs:
       if: ${{ steps.scan-locks.outputs.LOCK_ID != '' }}
       working-directory: ./terraform
       run: |
-        terraform force-unlock -force ${{ steps.scan-locks.outputs.LOCK_ID }}    
+        terraform force-unlock -force "${{ steps.scan-locks.outputs.LOCK_ID }}"
