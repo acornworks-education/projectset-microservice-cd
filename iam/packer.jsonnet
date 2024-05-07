@@ -68,7 +68,8 @@ local bucket_suffix = std.extVar('bucket_suffix');
                 "dynamodb:DescribeTable",
                 "dynamodb:GetItem",
                 "dynamodb:PutItem",
-                "dynamodb:DeleteItem"
+                "dynamodb:DeleteItem",
+                "dynamodb:Scan"
             ],
             "Resource": "arn:aws:dynamodb:*:*:table/terraform_state_lock"
         }        
