@@ -52,6 +52,7 @@ jobs:
       working-directory: ./terraform
       run: |
           output=$(aws dynamodb scan \
+            --region ap-southeast-2
             --table-name terraform_state_lock \
             --filter-expression "contains(LockID, :keyPattern)" \
             --expression-attribute-values '{":keyPattern":{"S":"${{ vars.AWS_REGION }}/terraform.tfstate"}}' \
