@@ -44,6 +44,5 @@ jobs:
       run: terraform plan -lock=${{ inputs.lock_option }} -var-file="vars/${{ inputs.environment }}.tfvars" -var="region=${{ vars.AWS_REGION }}" -var="ami_id=${{ inputs.ami }}"
     - id: terraform-apply      
       if: ${{ inputs.lock_option == 'true' }}
-      continue-on-error: true
       working-directory: ./terraform
       run: terraform apply -auto-approve -lock=${{ inputs.lock_option }} -var-file="vars/${{ inputs.environment }}.tfvars" -var="region=${{ vars.AWS_REGION }}" -var="ami_id=${{ inputs.ami }}"
