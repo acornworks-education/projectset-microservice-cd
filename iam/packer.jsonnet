@@ -22,6 +22,7 @@ local bucket_suffix = std.extVar('bucket_suffix');
                 "ec2:DeleteSecurityGroup",
                 "ec2:DeleteSnapshot",
                 "ec2:DeleteVolume",
+                "ec2:DeleteVpc",
                 "ec2:DeregisterImage",
                 "ec2:DescribeKeyPairs",
                 "ec2:DescribeAddresses",
@@ -45,8 +46,7 @@ local bucket_suffix = std.extVar('bucket_suffix');
                 "ec2:TerminateInstances",
                 "ecs:CreateCluster",
                 "ecs:DescribeClusters",
-
-
+                "ecs:DeleteCluster"
             ],
             "Resource": "*",
             "Condition": {
